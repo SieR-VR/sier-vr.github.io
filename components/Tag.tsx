@@ -16,7 +16,7 @@ export const Tag: React.FC<TagProps> = ({ href, children }) => {
         "dark:bg-gray-800 dark:border-gray-700"
       )}
     >
-      #{slugify(children)}
+      {slugify(children)}
     </Link>
   );
 };
