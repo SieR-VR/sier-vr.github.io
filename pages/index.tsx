@@ -14,12 +14,12 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
   return (
     <>
       <Page
-        title="Next.js MDX Blog Theme"
+        title="Home"
         description={
           <>
             <p>
               View the source code on{" "}
-              <a href="https://github.com/alexcarpenter/nextjs-mdx-blog-theme">
+              <a href="https://github.com/SieR-VR/sier-vr.github.io">
                 Github
               </a>
               .
