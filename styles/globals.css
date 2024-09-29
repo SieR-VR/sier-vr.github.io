@@ -78,14 +78,14 @@ pre[class*="language-"] {
   white-space: normal;
 }
 
-.token.comment,
-.token.prolog,
-.token.cdata {
+.hljs-comment,
+.hljs-prolog,
+.hljs-cdata {
   color: rgb(99, 119, 119);
   font-style: italic;
 }
 
-.token.punctuation {
+.hljs-punctuation {
   color: rgb(199, 146, 234);
 }
 
@@ -93,74 +93,74 @@ pre[class*="language-"] {
   color: rgb(178, 204, 214);
 }
 
-.token.deleted {
+.hljs-deleted {
   color: rgba(239, 83, 80, 0.56);
   font-style: italic;
 }
 
-.token.symbol,
-.token.property {
+.hljs-symbol,
+.hljs-property {
   color: rgb(128, 203, 196);
 }
 
-.token.tag,
-.token.operator,
-.token.keyword {
+.hljs-tag,
+.hljs-operator,
+.hljs-keyword {
   color: rgb(127, 219, 202);
 }
 
-.token.boolean {
+.hljs-boolean {
   color: rgb(255, 88, 116);
 }
 
-.token.number {
+.hljs-number {
   color: rgb(247, 140, 108);
 }
 
-.token.constant,
-.token.function,
-.token.builtin,
-.token.char {
+.hljs-constant,
+.hljs-function,
+.hljs-builtin,
+.hljs-char {
   color: rgb(130, 170, 255);
 }
 
-.token.selector,
-.token.doctype {
+.hljs-selector,
+.hljs-doctype {
   color: rgb(199, 146, 234);
   font-style: italic;
 }
 
-.token.attr-name,
-.token.inserted {
+.hljs-attr-name,
+.hljs-inserted {
   color: rgb(173, 219, 103);
   font-style: italic;
 }
 
-.token.string,
-.token.url,
-.token.entity,
-.language-css .token.string,
-.style .token.string {
+.hljs-string,
+.hljs-url,
+.hljs-entity,
+.language-css .hljs-string,
+.style .hljs-string {
   color: rgb(173, 219, 103);
 }
 
-.token.class-name,
-.token.atrule,
-.token.attr-value {
+.hljs-class-name,
+.hljs-atrule,
+.hljs-attr-value {
   color: rgb(255, 203, 139);
 }
 
-.token.regex,
-.token.important,
-.token.variable {
+.hljs-regex,
+.hljs-important,
+.hljs-variable {
   color: rgb(214, 222, 235);
 }
 
-.token.important,
-.token.bold {
+.hljs-important,
+.hljs-bold {
   font-weight: bold;
 }
 
-.token.italic {
+.hljs-italic {
   font-style: italic;
 }

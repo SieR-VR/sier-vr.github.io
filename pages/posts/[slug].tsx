@@ -1,16 +1,23 @@
-import { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { ParsedUrlQuery } from "querystring";
 import Link from "next/link";
-import { serialize } from "next-mdx-remote/serialize";
+import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { MDXRemote } from "next-mdx-remote";
-import rehypePrism from "rehype-prism-plus";
+import { serialize } from "next-mdx-remote/serialize";
+
+import { common } from "lowlight";
+import rehypeHighlight from "rehype-highlight";
+import remarkGfm from "remark-gfm";
+import { ParsedUrlQuery } from "querystring";
+
 import { getAllMdx, getMdx } from "@/lib/mdx";
 import { MDXFrontMatter } from "@/lib/types";
+import { cx } from "@/lib/utils";
+import nn from "@/lib/nn";
+
 import { Page } from "@/components/Page";
 import { components } from "@/components/MDX";
 import { Prose } from "@/components/Prose";
-import { cx } from "@/lib/utils";
-import remarkGfm from "remark-gfm";
+
+
 interface ContextProps extends ParsedUrlQuery {
   slug: string;
 }
@@ -91,14 +98,18 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const mdxFiles = getAllMdx();
   const postIndex = mdxFiles.findIndex((p) => p.frontMatter.slug === slug);
   const post = mdxFiles[postIndex];
+  
   const { frontMatter, content } = post;
   const mdxContent = await serialize(content, {
     mdxOptions: {
       remarkPlugins: [remarkGfm],
-      rehypePlugins: [rehypePrism],
+      rehypePlugins: [
+        [rehypeHighlight, { languages: { ...common, nn } }],
+      ],
     },
     scope: frontMatter,
   });
+  
   return {
     props: {
       frontMatter,
