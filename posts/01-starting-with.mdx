@@ -11,10 +11,10 @@ nn이라는 언어를 처음 고안한건 2022년 말~2023년 초 쯤이었다.
 
 ```
 entry(x: Tensor, a: Tensor, b: Tensor) {
-    let x = MatMul(x, a);
-    let x = Bias(x, b);
+  let x = MatMul(x, a);
+  let x = Bias(x, b);
 
-    x
+  x
 }
 ```
 
@@ -110,14 +110,14 @@ Linear(x: Tensor) =
 
 ```python
 class Linear:
-    def __init__(self, input, channel):
-        self.weight = Tensor.zeros(input, channel)
-        self.bias = Tensor.zeros(channel)
+  def __init__(self, input, channel):
+    self.weight = Tensor.zeros(input, channel)
+    self.bias = Tensor.zeros(channel)
 
-    def __call__(self, x: Tensor):
-        y = MatMul(x, self.weight)
-        y = Bias(y, self.bias)
-        return y
+  def __call__(self, x: Tensor):
+    y = MatMul(x, self.weight)
+    y = Bias(y, self.bias)
+    return y
 ```
 
 와 같이 간단하게 코드젠이 이루어지는 정도까지는 만들었다.
